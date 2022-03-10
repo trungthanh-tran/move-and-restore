@@ -13,10 +13,10 @@ using System.Collections;
 
 namespace FindAndCopy
 {
-    public partial class Form1 : Form
+    public partial class MainDialog : Form
     {
         private ArrayList latestHistory;
-        public Form1()
+        public MainDialog()
         {
             InitializeComponent();
 
@@ -26,7 +26,7 @@ namespace FindAndCopy
             this.Location = new Point((screen.Width - w) / 2, (screen.Height - h) / 2);
             this.Size = new Size(w, h);
             listBox1.Show();
-            dataGridView1.Hide();
+            dataGridHistory.Hide();
             latestHistory = new ArrayList();
         }
 
@@ -63,10 +63,10 @@ namespace FindAndCopy
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             listBox1.Show();
-            dataGridView1.Hide();
+            dataGridHistory.Hide();
             latestHistory.Clear();
             if (string.IsNullOrEmpty(textBox2.Text))
             {
@@ -88,7 +88,7 @@ namespace FindAndCopy
             renderList();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnMove_Click(object sender, EventArgs e)
         {
             string s = "";
             if (listBox1.SelectedItems.Count != 0)
@@ -173,15 +173,15 @@ namespace FindAndCopy
 
         }
 
-        private void button1_Click_2(object sender, EventArgs e)
+        private void btnHistory_click(object sender, EventArgs e)
         {
             listBox1.Hide();
-            dataGridView1.Show();
-            dataGridView1.Rows.Clear();
+            dataGridHistory.Show();
+            dataGridHistory.Rows.Clear();
             for (int i = 0; i < latestHistory.Count; i++)
             {
                 HistoryItem historyItem = latestHistory[i] as HistoryItem;
-                dataGridView1.Rows.Add(new object[] {
+                dataGridHistory.Rows.Add(new object[] {
                     historyItem.GetSrc(),
                     historyItem.GetDest(),
                     });
@@ -199,10 +199,10 @@ namespace FindAndCopy
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void BtnRestore_Click(object sender, EventArgs e)
         {
-            dataGridView1.Show();
-            dataGridView1.Rows.Clear();
+            dataGridHistory.Show();
+            dataGridHistory.Rows.Clear();
             for (int i = 0; i < latestHistory.Count; i++)
             {
                 HistoryItem historyItem = latestHistory[i] as HistoryItem;

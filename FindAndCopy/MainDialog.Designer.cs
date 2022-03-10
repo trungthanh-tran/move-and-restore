@@ -1,6 +1,6 @@
 ﻿namespace FindAndCopy
 {
-    partial class Form1
+    partial class MainDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -29,48 +29,48 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.searchbtn = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSrcChoose = new System.Windows.Forms.Button();
+            this.btnDestChoose = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnMove = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.findDataSet = new FindAndCopy.FindDataSet();
-            this.findDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnHistory = new System.Windows.Forms.Button();
+            this.dataGridHistory = new System.Windows.Forms.DataGridView();
             this.src = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.findDataSet = new FindAndCopy.FindDataSet();
+            this.findDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnRestore = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.findDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.findDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // searchbtn
+            // btnSrcChoose
             // 
-            this.searchbtn.Location = new System.Drawing.Point(30, 35);
-            this.searchbtn.Name = "searchbtn";
-            this.searchbtn.Size = new System.Drawing.Size(214, 23);
-            this.searchbtn.TabIndex = 0;
-            this.searchbtn.Text = "Chọn thư mục tìm kiếm";
-            this.searchbtn.UseVisualStyleBackColor = true;
-            this.searchbtn.Click += new System.EventHandler(this.button1_Click);
+            this.btnSrcChoose.Location = new System.Drawing.Point(30, 35);
+            this.btnSrcChoose.Name = "btnSrcChoose";
+            this.btnSrcChoose.Size = new System.Drawing.Size(214, 23);
+            this.btnSrcChoose.TabIndex = 0;
+            this.btnSrcChoose.Text = "Chọn thư mục tìm kiếm";
+            this.btnSrcChoose.UseVisualStyleBackColor = true;
+            this.btnSrcChoose.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnDestChoose
             // 
-            this.button2.Location = new System.Drawing.Point(30, 64);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(214, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Chọn thư mục copy";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnDestChoose.Location = new System.Drawing.Point(30, 64);
+            this.btnDestChoose.Name = "btnDestChoose";
+            this.btnDestChoose.Size = new System.Drawing.Size(214, 23);
+            this.btnDestChoose.TabIndex = 2;
+            this.btnDestChoose.Text = "Chọn thư mục copy";
+            this.btnDestChoose.UseVisualStyleBackColor = true;
+            this.btnDestChoose.Click += new System.EventHandler(this.button2_Click);
             // 
             // label3
             // 
@@ -116,25 +116,25 @@
             this.textBox3.TabIndex = 7;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // button3
+            // btnSearch
             // 
-            this.button3.Location = new System.Drawing.Point(52, 137);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 51);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Tìm Kiếm";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnSearch.Location = new System.Drawing.Point(52, 137);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(132, 51);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Tìm Kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // button4
+            // btnMove
             // 
-            this.button4.Location = new System.Drawing.Point(218, 137);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 51);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Di chuyển";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnMove.Location = new System.Drawing.Point(218, 137);
+            this.btnMove.Name = "btnMove";
+            this.btnMove.Size = new System.Drawing.Size(132, 51);
+            this.btnMove.TabIndex = 9;
+            this.btnMove.Text = "Di chuyển";
+            this.btnMove.UseVisualStyleBackColor = true;
+            this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // label4
             // 
@@ -169,56 +169,36 @@
             this.listBox1.TabIndex = 13;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // button1
+            // btnHistory
             // 
-            this.button1.Location = new System.Drawing.Point(395, 138);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 50);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Xem các file đã chuyển";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            this.btnHistory.Location = new System.Drawing.Point(395, 138);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(113, 50);
+            this.btnHistory.TabIndex = 14;
+            this.btnHistory.Text = "Xem các file đã chuyển";
+            this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_click);
             // 
-            // dataGridView1
+            // dataGridHistory
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridHistory.AllowUserToAddRows = false;
+            this.dataGridHistory.AllowUserToDeleteRows = false;
+            this.dataGridHistory.AllowUserToResizeColumns = false;
+            this.dataGridHistory.AllowUserToResizeRows = false;
+            this.dataGridHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridHistory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridHistory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.src,
             this.desc});
-            this.dataGridView1.Location = new System.Drawing.Point(30, 236);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(626, 284);
-            this.dataGridView1.TabIndex = 15;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // findDataSet
-            // 
-            this.findDataSet.DataSetName = "FindDataSet";
-            this.findDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // findDataSetBindingSource
-            // 
-            this.findDataSetBindingSource.DataSource = this.findDataSet;
-            this.findDataSetBindingSource.Position = 0;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(543, 138);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(113, 50);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Khôi phục tất cả";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.dataGridHistory.Location = new System.Drawing.Point(30, 236);
+            this.dataGridHistory.Name = "dataGridHistory";
+            this.dataGridHistory.RowHeadersWidth = 51;
+            this.dataGridHistory.RowTemplate.Height = 24;
+            this.dataGridHistory.Size = new System.Drawing.Size(626, 284);
+            this.dataGridHistory.TabIndex = 15;
+            this.dataGridHistory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // src
             // 
@@ -234,29 +214,49 @@
             this.desc.Name = "desc";
             this.desc.Width = 125;
             // 
-            // Form1
+            // findDataSet
+            // 
+            this.findDataSet.DataSetName = "FindDataSet";
+            this.findDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // findDataSetBindingSource
+            // 
+            this.findDataSetBindingSource.DataSource = this.findDataSet;
+            this.findDataSetBindingSource.Position = 0;
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Location = new System.Drawing.Point(543, 138);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(113, 50);
+            this.btnRestore.TabIndex = 16;
+            this.btnRestore.Text = "Khôi phục tất cả";
+            this.btnRestore.UseVisualStyleBackColor = true;
+            this.btnRestore.Click += new System.EventHandler(this.BtnRestore_Click);
+            // 
+            // MainDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(676, 603);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRestore);
+            this.Controls.Add(this.dataGridHistory);
+            this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnMove);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.searchbtn);
-            this.Name = "Form1";
+            this.Controls.Add(this.btnDestChoose);
+            this.Controls.Add(this.btnSrcChoose);
+            this.Name = "MainDialog";
             this.Text = "Find And Copy (simple)";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.findDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.findDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -266,22 +266,22 @@
 
         #endregion
 
-        private System.Windows.Forms.Button searchbtn;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSrcChoose;
+        private System.Windows.Forms.Button btnDestChoose;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnMove;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnHistory;
+        private System.Windows.Forms.DataGridView dataGridHistory;
         private System.Windows.Forms.BindingSource findDataSetBindingSource;
         private FindDataSet findDataSet;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.DataGridViewTextBoxColumn src;
         private System.Windows.Forms.DataGridViewTextBoxColumn desc;
     }
